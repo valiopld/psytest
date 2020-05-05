@@ -1,14 +1,20 @@
 .slider {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .visibleSlider {
   display: flex;
   height: 20rem;
+  max-height: 50vh;
+  max-width: 80vw;
 }
 
 .eventSlider {
   height: 20rem;
+  max-height: 70vh;
+  max-width: 80vw;
 
   position: absolute;
   top: 0;
