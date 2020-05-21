@@ -1,8 +1,7 @@
-.visible-slide {
+.all-tests-page {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transition: all 0.4s;
+  flex-wrap: wrap;
 }

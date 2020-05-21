@@ -1,16 +1,21 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 import Header from "./header/header.component";
-import Slider from "./slider/slider.component";
+import Main from "./main/main.component";
 import Footer from "./footer/footer.component";
+
+import "./App.css";
+
 function App() {
   return (
     <React.StrictMode>
       <div className="App">
-        <Header />
-        <Slider slides="10" />
-        <Footer />
+        <BrowserRouter>
+          <Header />
+          <Main />
+          <Footer />
+        </BrowserRouter>
       </div>
     </React.StrictMode>
   );
