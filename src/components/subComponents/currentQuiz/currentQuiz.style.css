@@ -28,3 +28,22 @@
   background-color: burlywood;
   border: 1px solid black;
 }
+
+.question {
+  font-size: 1.1rem;
+  color: rgb(102, 83, 35);
+  margin-bottom: 1rem;
+}
+
+.previue {
+  width: 50%;
+}
+
+button {
+  display: block;
+}
+
+.answer:hover {
+  border: 1px solid red;
+  cursor: pointer;
+}

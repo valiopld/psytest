@@ -6,7 +6,17 @@ import { quiz } from "./quiz";
 
 const CurrentQuiz = () => {
   const [getSlide, setSlide] = useState(null);
+  const [getPoints, setPoints] = useState(0);
 
+  const nextSlide = (e) => {
+    setPoints(getPoints + parseInt(e.target.attributes.points.value));
+
+    if (getSlide.id !== quiz.slides.length) {
+      setSlide(quiz.slides[getSlide.id]);
+    } else {
+      console.log("GINISH");
+    }
+  };
   return (
     <div className="current-quiz">
       <div className="slides-points"></div>
@@ -17,19 +27,20 @@ const CurrentQuiz = () => {
         </div>
       ) : (
         <div className="slide">
-          <div className="quistion">{getSlide.question}</div>
+          <div className="question">{getSlide.question}</div>
           <div className="answers">
             {getSlide.answers.map((ans) => (
-              <p key={ans.ans}>{ans.ans}</p>
+              <p
+                className="answer"
+                points={ans.point}
+                onClick={nextSlide}
+                key={ans.ans}
+              >
+                {ans.ans}
+              </p>
             ))}
           </div>
-          {getSlide.id !== quiz.slides.length ? (
-            <button onClick={() => setSlide(quiz.slides[getSlide.id])}>
-              next
-            </button>
-          ) : (
-            <button>FINISH</button>
-          )}
+          {getPoints}
         </div>
       )}
     </div>

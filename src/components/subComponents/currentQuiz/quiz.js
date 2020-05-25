@@ -1,32 +1,33 @@
 export const quiz = {
-  preview: "This is the Previuew",
+  preview: `Това е личностен въпросник - До колко чревоугодник сте.
+     Моля Отговаряйте на въпросите честно без да лъжете`,
   slides: [
     {
       id: 1,
-      question: "This is quiestion 1",
+      question: "Ако имате едно кюфте какво ще направите?",
       answers: [
-        { ans: "this is answer 1 for quistion1" },
-        { ans: "this is answer 2 for quistion1" },
-        { ans: "this is answer 3 for quistion1" },
+        { ans: "Ще го споделя с приятел", point: 1 },
+        { ans: "Ще си помисля дали да го изям", point: 2 },
+        { ans: "Ще го изям без да се замисля", point: 3 },
       ],
     },
     {
       id: 2,
-      question: "This is quiestion 2",
+      question: "По колко пъти на ден ядете",
       answers: [
-        { ans: "this is answer 1 for quistion2" },
-        { ans: "this is answer 2 for quistion2" },
-        { ans: "this is answer 3 for quistion2" },
+        { ans: "по 1 път на ден", point: 1 },
+        { ans: "по 3 пъти на ден", point: 2 },
+        { ans: "по над 10 пъти на ден", point: 3 },
       ],
     },
 
     {
       id: 3,
-      question: "This is quiestion 3",
+      question: "Какво мислите за дюнерите",
       answers: [
-        { ans: "this is answer 1 for quistion3" },
-        { ans: "this is answer 2 for quistion3" },
-        { ans: "this is answer 3 for quistion3" },
+        { ans: "Много вредни", point: 1 },
+        { ans: "Ако съм много гладен бих хапнал", point: 2 },
+        { ans: "Ям ги всеки ден - по цял ден", point: 3 },
       ],
     },
   ],
