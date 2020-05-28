@@ -3,9 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  color: unset;
+  text-decoration: unset;
+}
 .App {
   background-color: #dbdada;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
