@@ -8,7 +8,7 @@ a {
   text-decoration: unset;
 }
 .App {
-  background-color: #dbdada;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
