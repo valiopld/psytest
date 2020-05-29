@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import "./quiz.style.scss";
 
+import PreQuiz from "./preQuiz/preQuiz.component";
+import EndQuiz from "./endQuiz/endQuiz.component";
+import SingleQuestion from "./singleQuestion/singleQuestion.component";
+
 import test from "../../db/test";
 
 const Quiz = () => {
@@ -20,25 +24,17 @@ const Quiz = () => {
   const show = () => {
     switch (getQuizState) {
       case "start":
-        return (
-          <div>
-            <h1>{test.pre}</h1>
-            <button onClick={() => setQuizState("quiz")}>START</button>
-          </div>
-        );
+        return <PreQuiz text={test.pre} func={() => setQuizState("quiz")} />;
       case "quiz":
         return (
-          <div>
-            <h1>{test.questions[getQn]}</h1>
-            {test.answers.map((a, i) => (
-              <p key={i} onClick={() => nextQ(i)} className="option">
-                {a}
-              </p>
-            ))}
-          </div>
+          <SingleQuestion
+            question={test.questions[getQn]}
+            answers={test.answers}
+            ansFunc={(i) => nextQ(i)}
+          />
         );
       case "end":
-        return <div>END {getPoint}</div>;
+        return <EndQuiz points={getPoint} />;
 
       default:
         break;
