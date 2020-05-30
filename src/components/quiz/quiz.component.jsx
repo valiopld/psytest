@@ -6,7 +6,11 @@ import PreQuiz from "./preQuiz/preQuiz.component";
 import EndQuiz from "./endQuiz/endQuiz.component";
 import SingleQuestion from "./singleQuestion/singleQuestion.component";
 
-import test from "../../db/test";
+import test from "../../db/empatia";
+
+import { createTest } from "../../db/createTest";
+
+const myTest = createTest(test);
 
 const Quiz = () => {
   const [getQuizState, setQuizState] = useState("start");
@@ -24,7 +28,7 @@ const Quiz = () => {
   const show = () => {
     switch (getQuizState) {
       case "start":
-        return <PreQuiz text={test.pre} func={() => setQuizState("quiz")} />;
+        return <PreQuiz text={myTest.pre} func={() => setQuizState("quiz")} />;
       case "quiz":
         return (
           <SingleQuestion
